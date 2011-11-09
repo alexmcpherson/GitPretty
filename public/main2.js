@@ -10,12 +10,11 @@ $('document').ready(function(){
 
     step: function() {
       gittr.animate();
-      if (year.length == 0) {clearInterval(mainLoop); return;}
-      var today = year.shift();
+      if (gittr.data.length == 0) {clearInterval(mainLoop); return;}
+      var today = gittr.data.shift();
       if (today && today.length == 0) {return;}
       gittr.checkRepos(today); //add new repo containers if needed
       gittr.addCommits(today);
-      console.log('stepping');
     },
 
     animate: function() {
@@ -41,7 +40,6 @@ $('document').ready(function(){
       for (var i = 0, len = day.length; i < len; i++) {
         var repoName = day[i].repo;
         if (!gittr.repos[repoName]) {
-          console.log('new repo: ' + repoName);
           var repoContainer = gittr.addRepoContainer(repoName);
           gittr.repos[repoName] = repoContainer;
         }
@@ -55,5 +53,17 @@ $('document').ready(function(){
     }
   };
 
-  //var mainLoop = setInterval(gittr.step, 100);
+  for (collection in window.data) {
+    var thisCollection = window.data[collection];
+    for (var i = 0; i < thisCollection.length; i++) {
+      if (thisCollection[i] && thisCollection[i].length) {
+        for (var j = 0, leng = thisCollection[i].length; j < leng; j++) {
+          window.gittr.data[i] = window.gittr.data[i] || [];
+          window.gittr.data[i].push(thisCollection[i][j]);
+        };
+      }
+    };
+  }
+
+  var mainLoop = setInterval(gittr.step, 100);
 })
