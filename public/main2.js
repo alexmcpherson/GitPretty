@@ -2,6 +2,7 @@ $('document').ready(function(){
   var colors = [];
 
   window.gittr = {
+    data:[],
     $content: $('#content'),
     repos: {},
     userColors: {},
@@ -11,7 +12,7 @@ $('document').ready(function(){
       gittr.animate();
       if (year.length == 0) {clearInterval(mainLoop); return;}
       var today = year.shift();
-      if (today.length == 0) {return;}
+      if (today && today.length == 0) {return;}
       gittr.checkRepos(today); //add new repo containers if needed
       gittr.addCommits(today);
       console.log('stepping');
@@ -24,6 +25,7 @@ $('document').ready(function(){
     },
 
     addCommits: function(day) {
+      if (!day){return}
       for (var i = 0, len = day.length; i < len; i++) {
         var commit = day[i];
         var classes = commit.classes.join(' ') + ' ' + 'commit';
@@ -35,6 +37,7 @@ $('document').ready(function(){
     },
 
     checkRepos: function(day) {
+      if (!day){return}
       for (var i = 0, len = day.length; i < len; i++) {
         var repoName = day[i].repo;
         if (!gittr.repos[repoName]) {
@@ -52,5 +55,5 @@ $('document').ready(function(){
     }
   };
 
-  var mainLoop = setInterval(gittr.step, 100);
+  //var mainLoop = setInterval(gittr.step, 100);
 })

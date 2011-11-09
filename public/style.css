@@ -38,10 +38,10 @@ div.commit {
   -webkit-transition-timing-function: cubic-bezier(0.880, 0.390, 0.520, 0.850);
 }
 
-.grey {background-color: #888;}
-.tan {background-color: DarkKhaki;}
-.red {background-color: DarkRed;}
-.green {background-color: DarkGreen;}
+.nicoquickleft, .nicovalencia {background-color: #888;}
+.alexmcpherson {background-color: DarkKhaki;}
+.ryancook {background-color: DarkRed;}
+.taylorbeseda {background-color: DarkGreen;}
 .orange {background-color: Chocolate;}
 .blue {background-color: CornflowerBlue;}
 .yellow {background-color: GoldenRod;}
@@ -53,8 +53,6 @@ div.commit {
 .olive {background-color: OliveDrab;}
 .spring {background-color: SpringGreen;}
 
-.lightest {opacity: .1;}
-.light {opacity: .3;}
+.light {opacity: .1;}
 .medium {opacity: .5;}
-.dark {opacity: .8;}
-.darkest {opacity: 1;}
+.dark {opacity: 1;}
