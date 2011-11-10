@@ -2,6 +2,16 @@ body {
   background-color: #333;
 }
 
+#date {
+  font-family: Futura;
+  font-size: 72px;
+  font-weight: light;
+  position: relative;
+  top: 90%;
+  width: 400px;
+  margin: 0 auto;
+}
+
 #content {
   border: 1px solid #333;
   position: absolute;
@@ -34,24 +44,27 @@ div.commit {
   float: left;
   opacity:  0;
   -webkit-transition-property: top, left, opacity;
-  -webkit-transition-duration: 1s;
+  -webkit-transition-duration: 5s;
   -webkit-transition-timing-function: cubic-bezier(0.880, 0.390, 0.520, 0.850);
 }
 
-.nicoquickleft, .nicovalencia {background-color: #888;}
-.alexmcpherson {background-color: Red;}
-.ryancook {background-color: DarkRed;}
-.taylorbeseda {background-color: DarkGreen;}
-.orange {background-color: Chocolate;}
-.blue {background-color: CornflowerBlue;}
-.yellow {background-color: GoldenRod;}
-.pink {background-color: HotPink;}
-.purple {background-color: MediumPurple;}
-.otherOrange {background-color: Orange;}
-.navy {background-color: Navy;}
-.magenta {background-color: Magenta;}
-.olive {background-color: OliveDrab;}
-.spring {background-color: SpringGreen;}
+.nicoquickleft, .nicovalencia, .nico {background-color: #5D7359;}
+.alexmcpherson {background-color: #E0D697;}
+.tbeseda, .taylorbeseda {background-color: #D6AA5C;}
+.garettshulman {background-color: #8C5430;}
+.ryancook, .cookrn {background-color: #661C0E;}
+.gerreddillon {background-color: #89682D;}
+.rylanbowers {background-color: #205189;}
+.beccagallery {background-color: #5C94D6;}
+.brentertz {background-color: #C0CA55;}
+.sambreed {background-color: #6C9380;}
+.bobbonifield {background-color: #56626B;}
+.ericreid {background-color: #F07C6C;}
+.jessicard {background-color: #AD5472;}
+.collinschaafsma {background-color: #42826C;}
+.johnwright {background-color: #002F32;}
+.grantblakeman {background-color: #002F32;}
+.davidaragon {background-color: #FFC861;}
 
 .light {opacity: .1;}
 .medium {opacity: .5;}

@@ -2,13 +2,14 @@ $('document').ready(function(){
   var colors = [];
 
   window.gittr = {
-    data:[],
+    data: new Array(365),
     $content: $('#content'),
     repos: {},
     userColors: {},
     newCommits : [],
 
     step: function() {
+      $("#date").empty().append(gittr.dateFromDay(2011, 365-gittr.data.length));
       gittr.animate();
       if (gittr.data.length == 0) {clearInterval(mainLoop); return;}
       var today = gittr.data.shift();
@@ -27,7 +28,7 @@ $('document').ready(function(){
       if (!day){return}
       for (var i = 0, len = day.length; i < len; i++) {
         var commit = day[i];
-        var classes = commit.classes.join(' ') + ' ' + 'commit';
+        var classes = commit.classes.join(' ');
         var styles = ['position:relative;top:',(Math.random()*1000),'px;left:',((Math.random()*2-1)*200),'px;'].join('');
         var div = $('<div class="'+ classes +'" style="' + styles + '" >');
         gittr.repos[commit.repo].append(div);
@@ -50,6 +51,12 @@ $('document').ready(function(){
       var div = $('<div class="repo" id="'+repoName+'"><div class="brace">}</div></div>');
       gittr.$content.append(div);
       return div
+    },
+
+    dateFromDay: function(year, day) {
+      var date = new Date(year, 0);
+      var tempDate = new Date(date.setDate(day));
+      return (tempDate.getMonth()+1) + "/" + (tempDate.getDate()) + "/" + tempDate.getFullYear();
     }
   };
 
@@ -65,5 +72,5 @@ $('document').ready(function(){
     };
   }
 
-  var mainLoop = setInterval(gittr.step, 100);
+  var mainLoop = setInterval(gittr.step, 1000);
 })
