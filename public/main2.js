@@ -11,7 +11,11 @@ $('document').ready(function(){
     step: function() {
       $("#date").empty().append(gittr.dateFromDay(2011, 365-gittr.data.length));
       gittr.animate();
-      if (gittr.data.length == 0) {clearInterval(mainLoop); return;}
+      if (gittr.data.length == 0) {
+        clearInterval(mainLoop);
+        window.location.href=window.location.href;
+        return;
+      }
       var today = gittr.data.shift();
       if (today && today.length == 0) {return;}
       gittr.checkRepos(today); //add new repo containers if needed
@@ -72,5 +76,5 @@ $('document').ready(function(){
     };
   }
 
-  var mainLoop = setInterval(gittr.step, 1000);
+  var mainLoop = setInterval(gittr.step, 1500);
 })

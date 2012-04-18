@@ -44,8 +44,18 @@ div.commit {
   float: left;
   opacity:  0;
   -webkit-transition-property: top, left, opacity;
-  -webkit-transition-duration: 5s;
+  -webkit-transition-duration: 8s;
   -webkit-transition-timing-function: cubic-bezier(0.880, 0.390, 0.520, 0.850);
+}
+
+#desc {
+  height: 200px;
+  width: 573px;
+  font-family: Futura;
+  font-size: 2em;
+  position: absolute;
+  top: 30%;
+  left: 20%
 }
 
 .nicoquickleft, .nicovalencia, .nico {background-color: #5D7359;}
